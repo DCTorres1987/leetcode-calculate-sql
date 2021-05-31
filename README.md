@@ -18,8 +18,8 @@ Next, I coded an outer select that will pull all this information and now my new
 I can use a case statement based on the max salary to determine how much taxes should be calculated for each person.
 Here is the final code:
 
-<snippet>
-select company_id,
+
+`select company_id,
     employee_id,
     employee_name,
     round(case when max_salary < 1000 then salary 
@@ -33,5 +33,4 @@ from
     employee_name,
     salary,
     max(salary) over (partition by company_id order by salary desc) max_salary
-from salaries);
-</snippet>
+from salaries);`
